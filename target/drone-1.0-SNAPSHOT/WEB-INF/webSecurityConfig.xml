@@ -12,6 +12,7 @@
         <intercept-url pattern="/" access="permitAll()"/>
         <form-login
                 login-page='/user-login'
+                authentication-success-forward-url="/profile"
                 authentication-failure-url="/error" />
         <csrf disabled="true"/>
     </http>

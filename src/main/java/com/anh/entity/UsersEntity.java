@@ -6,11 +6,9 @@ import javax.persistence.*;
 import javax.validation.constraints.Size;
 
 @Entity
-@Table(name = "users", schema = "spring-hateoas")
+@Table(name = "users", schema = "test")
 public class UsersEntity {
     private int id;
-    private String accessToken;
-    private String created;
     private String email;
     private String name;
     private String password;
@@ -33,26 +31,6 @@ public class UsersEntity {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    @Basic
-    @Column(name = "access_token")
-    public String getAccessToken() {
-        return accessToken;
-    }
-
-    public void setAccessToken(String accessToken) {
-        this.accessToken = accessToken;
-    }
-
-    @Basic
-    @Column(name = "created")
-    public String getCreated() {
-        return created;
-    }
-
-    public void setCreated(String created) {
-        this.created = created;
     }
 
     @Basic
@@ -79,6 +57,7 @@ public class UsersEntity {
 
     @Basic
     @Column(name = "password")
+    @Size(min = 8)
     public String getPassword() {
         return password;
     }
@@ -106,8 +85,6 @@ public class UsersEntity {
         UsersEntity that = (UsersEntity) o;
 
         if (id != that.id) return false;
-        if (accessToken != null ? !accessToken.equals(that.accessToken) : that.accessToken != null) return false;
-        if (created != null ? !created.equals(that.created) : that.created != null) return false;
         if (email != null ? !email.equals(that.email) : that.email != null) return false;
         if (name != null ? !name.equals(that.name) : that.name != null) return false;
         if (password != null ? !password.equals(that.password) : that.password != null) return false;
@@ -117,8 +94,6 @@ public class UsersEntity {
     @Override
     public int hashCode() {
         int result = id;
-        result = 31 * result + (accessToken != null ? accessToken.hashCode() : 0);
-        result = 31 * result + (created != null ? created.hashCode() : 0);
         result = 31 * result + (email != null ? email.hashCode() : 0);
         result = 31 * result + (name != null ? name.hashCode() : 0);
         result = 31 * result + (password != null ? password.hashCode() : 0);

@@ -7,10 +7,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="dronehire" />
+        <module name="test" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="dronehire" target="1.7" />
+      <module name="test" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>

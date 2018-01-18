@@ -24,10 +24,10 @@
     <import resource="webSecurityConfig.xml"/>
     <bean id="dataSource"
           class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-        <property name="driverClassName" value="com.mysql.jdbc.Driver" />
-        <property name="url" value="${project.datasource.url}" />
-        <property name="username" value="${project.datasource.user}" />
-        <property name="password" value="${project.datasource.pass}" />
+        <property name="driverClassName" value="${mysql.driver}" />
+        <property name="url" value="${mysql.url}" />
+        <property name="username" value="${mysql.user}" />
+        <property name="password" value="${mysql.password}" />
     </bean>
 
     <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">

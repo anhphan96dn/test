@@ -16,16 +16,18 @@
 
     <context:component-scan base-package="com.anh"/>
     <mvc:resources mapping="/resources/**" location="/resources/" />
+
+    <context:property-placeholder location="classpath:application.properties"/>
     <mvc:annotation-driven/>
     <context:annotation-config />
     <jpa:repositories base-package="com.anh.repository"/>
     <import resource="webSecurityConfig.xml"/>
     <bean id="dataSource"
           class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-        <property name="driverClassName" value="com.mysql.jdbc.Driver" />
-        <property name="url" value="jdbc:mysql://localhost:3306/spring-hateoas?useSSL=false" />
-        <property name="username" value="root" />
-        <property name="password" value="123456" />
+        <property name="driverClassName" value="${mysql.driver}" />
+        <property name="url" value="${mysql.url}" />
+        <property name="username" value="${mysql.user}" />
+        <property name="password" value="${mysql.password}" />
     </bean>
 
     <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">

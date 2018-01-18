@@ -3,7 +3,7 @@ package com.anh.entity;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "group_variants", schema = "spring-hateoas")
+@Table(name = "group_variants", schema = "test")
 public class GroupVariantsEntity {
     private long id;
     private String variantName;

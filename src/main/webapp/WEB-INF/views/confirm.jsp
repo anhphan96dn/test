@@ -11,11 +11,6 @@
     <title>Title</title>
 </head>
 <body>
-
-    <form action="/confirm" method="post">
-        <input type="hidden" name="token" value="${token}">
-        <input type="text" name="userToken" id="token">
-        <input type="submit" value="Send"/>
-    </form>
+    <h1>an email has been sent to your email, please check email to active your account</h1>
 </body>
 </html>
